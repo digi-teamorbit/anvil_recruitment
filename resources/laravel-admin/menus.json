@@ -1,0 +1,24 @@
+{
+   "menus":[
+      {
+         "section":"Modules",
+         "items":[
+            {
+               "title":"News",
+               "icon":"fas fa-align-justify",
+               "url":"\/admin\/news"
+            },
+            {
+               "title":"Timesheet",
+               "icon":"fas fa-align-justify",
+               "url":"\/admin\/timesheet"
+            },
+            {
+               "title":"Blanksheet",
+               "icon":"fas fa-align-justify",
+               "url":"\/admin\/blanksheet"
+            }
+         ]
+      }
+   ]
+}
