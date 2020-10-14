@@ -1704,6 +1704,10 @@ width: 100%;
     color: #d11515;
 }
 
+.active{
+    color: #38b53d;
+}
+
 
 /* Left Sec */
 
@@ -1945,6 +1949,16 @@ h5.green_text{
     padding: 20px 50px 20px 0px;
 }
 a.btn.apply_btn {
+    margin: -80px 0 0;
+    display: block;
+    padding: 0 60px;
+    width: 140px;
+    border-radius: 0!important;
+    background: #ffffff;
+    border: 2px solid #126eb5;
+    color: #126eb5;
+}
+button.btn.apply_btn {
     margin: -80px 0 0;
     display: block;
     padding: 0 60px;

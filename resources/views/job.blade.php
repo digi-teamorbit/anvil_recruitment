@@ -76,9 +76,12 @@
             
             </div>
             <div class="featuresec">
+              @foreach($featured as $value)
               <h4>Featured Jobs</h4>
-              <h6>{{$featured->title}}</h6>
-              <span class="Dprice">$ {{$featured->salary}}</span> <a href="">Read More</a> </div>
+              <h6>{{$value->title}}</h6>
+              <span class="Dprice">$ {{$value->salary}}</span> <a href="">Read More</a>
+              @endforeach
+               </div>
           </div>
            
         </div>
@@ -112,7 +115,12 @@
             <div class="col-xs-12 co-sm-3 col-md-6">
               <h3>{{$value->title}}</h3>
               <p><i class="fa fa-map-marker" aria-hidden="true"></i> {{$value->city}}, {{$value->company}} </p>
+              @if( $value->status == "expired")
               <p><i class="fa fa-lock" aria-hidden="true"></i> <a href="" class="expired">{{$value->status}}</a></p>
+
+                @else
+                  <p><i class="fa fa-unlock" aria-hidden="true"></i> <a href="" class="active">{{$value->status}}</a></p>
+                  @endif
             </div>
             <div class="col-xs-12 co-sm-3 col-md-3">
               <h5 class="green_text"> <i class="fa fa-money" aria-hidden="true"></i> ${{$value->salary}}</h5>
@@ -121,7 +129,7 @@
             <div class="col-xs-12 co-sm-3 col-md-4">
               <h5> <i class="fa fa-map-berifcase" aria-hidden="true"></i> {{$value->sector}}</h5>
             </div>
-            <div class="col-xs-12 co-sm-3 col-md-2"> <a href="" class="btn apply_btn"> View More</a> </div>
+            <div class="col-xs-12 co-sm-3 col-md-2"> <a href="{{ url('job_detail/'.$value->id) }}" class="btn apply_btn"> View More</a> </div>
           </div>
           @endforeach
       

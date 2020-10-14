@@ -102,6 +102,7 @@ class HomeController extends Controller
             $timesheet->Time = $request->Time;
             $timesheet->email = $request->email;
             $timesheet->subject = $request->subject; 
+            $timesheet->job_id  = $request->job_id;
                   
 
               $file = $request->file('file');
@@ -190,9 +191,12 @@ class HomeController extends Controller
                   }else{
 
                    $job = DB::table('jobs')->paginate(5);
+
                     }
-        
-        $featured = DB::table('jobs')->where('featured', '=', yes)->first();
+
+
+        /*$detail  = DB::table('jobs')->where('id', $id)->first();*/
+        $featured = DB::table('jobs')->where('featured', '=', yes)->get();
         return view('job',compact('job_board','innerbanner','type','sector','job','featured'));
     }   
      public function Aboutus(){
@@ -218,5 +222,12 @@ class HomeController extends Controller
     $innerbanner = DB::table('innerbanners')->where('id',5)->first();
  $contact = DB::table('pages')->where('id',11)->first();
         return view('contact',compact('contact','innerbanner'));
+
+    }    public function JobDetail($id){
+    $innerbanner = DB::table('innerbanners')->where('id',6)->first();
+    $detail = DB::table('pages')->where('id',14)->first();
+    $jobdetail = DB:: table('jobs')->where('id',$job_id)->first();
+        return view('job_detail',compact('innerbanner','detail'));
     }
+
 }

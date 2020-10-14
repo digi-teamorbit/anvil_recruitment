@@ -87,7 +87,7 @@
               <input type="text" placeholder="Phone">
             </div> -->
             <div class="form-group col-md-12">
-              <p> <input type="checkbox" name=""> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a tortor eu nulla dapibus tincidunt. Maecenas venenatis finibus sapien non interdum. Integer facilisis.</p>
+             <!--  <p> <input type="checkbox" name=""> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a tortor eu nulla dapibus tincidunt. Maecenas venenatis finibus sapien non interdum. Integer facilisis.</p> -->
               <input type="submit" value="Submit">
             </div>
           </form>

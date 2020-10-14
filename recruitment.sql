@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 13, 2020 at 11:32 AM
+-- Generation Time: Oct 14, 2020 at 09:07 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.2.32
 
@@ -355,7 +355,11 @@ INSERT INTO `activity_log` (`id`, `log_name`, `description`, `subject_id`, `subj
 (551, 'Admin', 'LoggedIn', 1, 'App\\User', 1, 'App\\User', '[]', '2020-10-12 00:35:49', '2020-10-12 00:35:49'),
 (552, 'Admin', 'LoggedIn', 1, 'App\\User', 1, 'App\\User', '[]', '2020-10-12 03:10:08', '2020-10-12 03:10:08'),
 (553, 'Admin', 'LoggedOut', 1, 'App\\User', 1, 'App\\User', '[]', '2020-10-12 07:53:47', '2020-10-12 07:53:47'),
-(554, 'Admin', 'LoggedIn', 1, 'App\\User', 1, 'App\\User', '[]', '2020-10-13 00:26:05', '2020-10-13 00:26:05');
+(554, 'Admin', 'LoggedIn', 1, 'App\\User', 1, 'App\\User', '[]', '2020-10-13 00:26:05', '2020-10-13 00:26:05'),
+(555, 'Admin', 'LoggedOut', 1, 'App\\User', 1, 'App\\User', '[]', '2020-10-13 04:34:44', '2020-10-13 04:34:44'),
+(556, 'Admin', 'LoggedIn', 1, 'App\\User', 1, 'App\\User', '[]', '2020-10-14 00:19:00', '2020-10-14 00:19:00'),
+(557, 'Admin', 'LoggedOut', 1, 'App\\User', 1, 'App\\User', '[]', '2020-10-14 00:24:40', '2020-10-14 00:24:40'),
+(558, 'Admin', 'LoggedIn', 1, 'App\\User', 1, 'App\\User', '[]', '2020-10-14 01:22:39', '2020-10-14 01:22:39');
 
 -- --------------------------------------------------------
 
@@ -49113,7 +49117,8 @@ INSERT INTO `innerbanners` (`id`, `created_at`, `updated_at`, `name`, `descripti
 (2, '2020-10-08 05:55:51', '2020-10-08 06:00:53', 'timesheet', 'Timesheets', 'uploads/innerbanners/banner-1_1602154853.jpg'),
 (3, '2020-10-08 05:56:16', '2020-10-08 06:01:08', 'Live Jobs board', 'Live Jobs board', 'uploads/innerbanners/banner-1_1602154868.jpg'),
 (4, '2020-10-08 06:03:16', '2020-10-08 06:03:16', 'Testimonials', 'Testimonials', 'uploads/innerbanners/20201008banner-1.jpg.jpg'),
-(5, '2020-10-08 06:04:40', '2020-10-08 06:04:40', 'Contact Us', 'CONTACT US', 'uploads/innerbanners/20201008banner-1.jpg.jpg');
+(5, '2020-10-08 06:04:40', '2020-10-08 06:04:40', 'Contact Us', 'CONTACT US', 'uploads/innerbanners/20201008banner-1.jpg.jpg'),
+(6, '2020-10-14 01:30:55', '2020-10-14 01:30:55', 'Apply Now', 'Apply Now', 'uploads/innerbanners/20201014banner-1.jpg.jpg');
 
 -- --------------------------------------------------------
 
@@ -49174,7 +49179,7 @@ CREATE TABLE `jobs` (
 --
 
 INSERT INTO `jobs` (`id`, `type`, `created_at`, `updated_at`, `title`, `city`, `company`, `status`, `salary`, `featured`, `sector`) VALUES
-(1, 'Internship', '2020-10-12 05:36:58', '2020-10-13 04:07:12', 'ACCOUNTS OFFICER - PAYABLES', 'calarfornia', 'anvil recruitment', 'Active', 31000, 'Yes', 'Accounting'),
+(1, 'Internship', '2020-10-12 05:36:58', '2020-10-14 00:23:00', 'ACCOUNTS OFFICER - PAYABLES', 'calarfornia', 'anvil recruitment', 'expired', 31000, 'Yes', 'Accounting'),
 (4, 'Full time', '2020-10-12 06:03:41', '2020-10-13 04:07:20', 'ACCOUNTS OFFICER - PAYABLES', 'calarfornia', 'anvil recruitment', 'Active', 31000, 'Yes', 'Accounting'),
 (5, 'Full time', '2020-10-12 06:05:02', '2020-10-13 04:07:27', 'ACCOUNTS OFFICER - PAYABLES', 'calarfornia', 'anvil recruitment', 'Active', 31000, 'Yes', 'Accounting'),
 (6, 'Full time', '2020-10-12 06:05:15', '2020-10-13 04:07:35', 'ACCOUNTS OFFICER - PAYABLES', 'calarfornia', 'anvil recruitment', 'Active', 31000, 'Yes', 'Accounting'),
@@ -49445,7 +49450,8 @@ INSERT INTO `pages` (`id`, `created_at`, `updated_at`, `page_name`, `name`, `con
 (10, '2020-10-06 04:17:10', '2020-10-06 04:17:10', 'testimonial', 'testimonial', '<h2 class=\"wow fadeInDown\" data-wow-delay=\"0.6s\" data-wow-duration=\"2s\">Our Happy Clients</h2>\r\n\r\n<p class=\"wow fadeInUp\" data-wow-delay=\"0.9s\" data-wow-duration=\"2s\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a tortor eu nulla dapibus tincidunt. Maecenas venenatis finibus sapien non interdum. Integer facilisis.</p>', NULL),
 (11, '2020-10-06 07:43:44', '2020-10-06 07:43:44', 'contact', 'contact', '<h2>Get In Touch</h2>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetuer adipiscinga elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>', NULL),
 (12, '2020-10-08 00:34:10', '2020-10-08 00:34:10', 'job board', 'job board', '<h2>Jobs Board</h2>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a tortor eu nulla dapibus tincidunt. Maecenas venenatis finibus sapien non interdum. Integer facilisis..</p>', NULL),
-(13, '2020-10-08 05:41:04', '2020-10-08 05:41:04', 'download timesheet', 'download timesheet', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a tortor eu nulla dapibus tincidunt. Maecenas venenatis finibus sapien non interdum. Integer facilisis.</p>', 'uploads/pages/20201008.png');
+(13, '2020-10-08 05:41:04', '2020-10-08 05:41:04', 'download timesheet', 'download timesheet', '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent a tortor eu nulla dapibus tincidunt. Maecenas venenatis finibus sapien non interdum. Integer facilisis.</p>', 'uploads/pages/20201008.png'),
+(14, '2020-10-14 01:25:06', '2020-10-14 01:25:06', 'job_detail', 'Details', '<h3>Some Words About</h3>\r\n\r\n<h4>Anvil Recruitment</h4>\r\n\r\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur....</p>', 'uploads/pages/20201014.png');
 
 -- --------------------------------------------------------
 
@@ -50226,6 +50232,7 @@ CREATE TABLE `timesheets` (
   `id` int(10) UNSIGNED NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
+  `job_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `lookingFor` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -50235,6 +50242,19 @@ CREATE TABLE `timesheets` (
   `Time` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `timesheet` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `timesheets`
+--
+
+INSERT INTO `timesheets` (`id`, `created_at`, `updated_at`, `job_id`, `name`, `phone`, `lookingFor`, `email`, `subject`, `file`, `Time`, `timesheet`) VALUES
+(1, '2020-10-14 00:58:21', '2020-10-14 00:58:21', NULL, 'marry john', '01438742', 'sdfaf', 'monica@gmail.com', 'xzcx', 'uploads/cv/20201014fa_1.jpg.jpg', 'dfgfsg', NULL),
+(2, '2020-10-14 00:59:24', '2020-10-14 00:59:24', NULL, 'marry john', '01438742', 'sdfaf', 'monica@gmail.com', 'xzcx', 'uploads/cv/20201014dn.png.png', 'dfgfsg', NULL),
+(3, '2020-10-14 00:59:40', '2020-10-14 00:59:40', NULL, 'marry john', '01438742', 'sdfaf', 'monica@gmail.com', 'xzcx', 'uploads/cv/2020101420200909154654_7-product-detail-4.docx.docx', 'dfgfsg', NULL),
+(4, '2020-10-14 01:02:02', '2020-10-14 01:02:02', NULL, 'marry john', '01438742', 'sdfaf', 'monica@gmail.com', 'xzcx', 'uploads/cv/2020101454.txt.txt', 'dfgfsg', NULL),
+(5, '2020-10-14 01:03:02', '2020-10-14 01:03:02', NULL, 'marry john', '01438742', 'sdfaf', 'monica@gmail.com', 'xzcx', 'uploads/cv/2020101454.txt.txt', 'dfgfsg', NULL),
+(6, '2020-10-14 01:57:08', '2020-10-14 01:57:08', NULL, 'marry john', '01438742', 'sdfaf', 'monica@gmail.com', 'xzcx', 'uploads/cv/2020101420200929014058_0-1601228305-Community List.docx.docx', 'dfgfsg', NULL),
+(7, '2020-10-14 01:57:21', '2020-10-14 01:57:21', NULL, 'marry john', '01438742', 'sdfaf', 'monica@gmail.com', 'xzcx', 'uploads/cv/2020101420200929014058_0-1601228305-Community List.docx.docx', 'dfgfsg', NULL);
 
 -- --------------------------------------------------------
 
@@ -50285,7 +50305,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `localisation`, `provider_id`, `provider`, `status`, `remember_token`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Admin', 'admin@anvil.com', '$2y$08$4pDL8gGKXTRIeJ0vyU/rMurO0c9qBQGG2JaFxUDOKmzBgD7o9A7Au', '', NULL, NULL, 1, 'Zq4ypznGcKNMCmXJvkoqGvvzcZrvE7pwNRc1CX2tksvBBp3oADcVXn3YwbFU', '2019-11-04 16:29:11', '2019-11-07 15:49:20', NULL),
+(1, 'Admin', 'admin@anvil.com', '$2y$08$4pDL8gGKXTRIeJ0vyU/rMurO0c9qBQGG2JaFxUDOKmzBgD7o9A7Au', '', NULL, NULL, 1, '1v3vm3D8okj968E3k5R6JG1gOLxzJdqarGyxQjDfRswfTKvLy15VAiTrAkCE', '2019-11-04 16:29:11', '2019-11-07 15:49:20', NULL),
 (2, 'Tom Hardy', 'tomhardy.developer@gmail.com', '$2y$08$4pDL8gGKXTRIeJ0vyU/rMurO0c9qBQGG2JaFxUDOKmzBgD7o9A7Au', NULL, NULL, NULL, 1, 'DSDdSeIIgyAkuuAmFqL0BW7LHQDNJ2h6GK1rpZT7xQA691ZaqyFUaM4MSXKV', '2020-05-30 16:59:58', '2020-05-30 16:59:58', NULL),
 (3, 'Leon Kennedy', 'glariance@gmail.com', '$2y$10$bZiq.cg1CCg3opcEBzlvreQkjYufrnYqSAyXkzK87fI0FzEllMyYK', NULL, NULL, NULL, 1, 'Rae9kwFDvbPjlI62MGljKo0ZZm4fwCkPL1ZYywVJfTAKvo5pN4ESuXPtceBj', '2020-05-30 19:05:58', '2020-05-30 19:05:58', NULL),
 (4, 'JIll Velentine', 'Jill@velentien.com', '$2y$10$hGd8E3s0xRGAHqaJMyYeluuaQ0b3sCasruaFvMmU0GgQqQlRqJxzS', NULL, NULL, NULL, 1, 'ytFM4we767EFstneflcDZlGCCOsr3QI1h6F7A0kPf7WjlqzecJaQghmqWLEe', '2020-06-01 14:58:08', '2020-06-01 14:58:08', NULL),
@@ -50515,7 +50535,7 @@ ALTER TABLE `wishlists`
 -- AUTO_INCREMENT for table `activity_log`
 --
 ALTER TABLE `activity_log`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=555;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=559;
 
 --
 -- AUTO_INCREMENT for table `banners`
@@ -50563,7 +50583,7 @@ ALTER TABLE `imagetable`
 -- AUTO_INCREMENT for table `innerbanners`
 --
 ALTER TABLE `innerbanners`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `inquiry`
@@ -50617,7 +50637,7 @@ ALTER TABLE `orders_products`
 -- AUTO_INCREMENT for table `pages`
 --
 ALTER TABLE `pages`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `permissions`
@@ -50665,7 +50685,7 @@ ALTER TABLE `testimonials`
 -- AUTO_INCREMENT for table `timesheets`
 --
 ALTER TABLE `timesheets`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `types`

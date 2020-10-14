@@ -194,6 +194,7 @@ Route::get('aboutus','HomeController@Aboutus')->name('aboutus');
 Route::get('testimonial','HomeController@Testimonial')->name('testimonial');
 Route::get('time-sheet','HomeController@Timesheet')->name('time-sheet');
 Route::get('contact','HomeController@Contact')->name('contact');
+Route::get('job_detail/{id}','HomeController@JobDetail')->name('job_detail');
 Route::post('time-sheet-submit','HomeController@TimesheetSubmit')->name('timesheetSubmit');
 Route::post('contact-us-submit','HomeController@contactUsSubmit')->name('contactUsSubmit');
 Route::post('newsletter-submit','HomeController@newsletterSubmit')->name('newsletterSubmit');
