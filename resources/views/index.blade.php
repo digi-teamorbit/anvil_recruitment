@@ -92,7 +92,7 @@
       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
         <div class="about_text wow fadeInRight" data-wow-dusration="2s">
    <?=html_entity_decode($cms_home1->content)  ?>
-          <a href="#" class="btn blue">Read More</a> </div>
+          <a href="{{url('aboutus')}}" class="btn blue">Read More</a> </div>
       </div>
     </div>
   </div>
