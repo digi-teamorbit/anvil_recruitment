@@ -76,8 +76,8 @@
             
             </div>
             <div class="featuresec">
+               <h4>Featured Jobs</h4>
               @foreach($featured as $value)
-              <h4>Featured Jobs</h4>
               <h6>{{$value->title}}</h6>
               <span class="Dprice">$ {{$value->salary}}</span> <a href="">Read More</a>
               @endforeach

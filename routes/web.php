@@ -197,6 +197,7 @@ Route::get('contact','HomeController@Contact')->name('contact');
 Route::get('job_detail/{id}','HomeController@JobDetail')->name('job_detail');
 Route::post('time-sheet-submit','HomeController@TimesheetSubmit')->name('timesheetSubmit');
 Route::post('contact-us-submit','HomeController@contactUsSubmit')->name('contactUsSubmit');
+Route::post('job-inquiry','HomeController@JobInquiry')->name('jobinquiry');
 Route::post('newsletter-submit','HomeController@newsletterSubmit')->name('newsletterSubmit');
 
 //=================================================================//
@@ -263,3 +264,4 @@ Route::resource('admin/innerbanner', 'Admin\\InnerbannerController');
 Route::resource('admin/type', 'Admin\\TypeController');
 Route::resource('admin/sector', 'Admin\\SectorController');
 Route::resource('admin/job', 'Admin\\JobController');
+Route::resource('admin/jobinquiry', 'Admin\\jobinquiryController');

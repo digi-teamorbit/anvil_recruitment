@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 14, 2020 at 09:07 AM
+-- Generation Time: Oct 15, 2020 at 10:00 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.2.32
 
@@ -359,7 +359,9 @@ INSERT INTO `activity_log` (`id`, `log_name`, `description`, `subject_id`, `subj
 (555, 'Admin', 'LoggedOut', 1, 'App\\User', 1, 'App\\User', '[]', '2020-10-13 04:34:44', '2020-10-13 04:34:44'),
 (556, 'Admin', 'LoggedIn', 1, 'App\\User', 1, 'App\\User', '[]', '2020-10-14 00:19:00', '2020-10-14 00:19:00'),
 (557, 'Admin', 'LoggedOut', 1, 'App\\User', 1, 'App\\User', '[]', '2020-10-14 00:24:40', '2020-10-14 00:24:40'),
-(558, 'Admin', 'LoggedIn', 1, 'App\\User', 1, 'App\\User', '[]', '2020-10-14 01:22:39', '2020-10-14 01:22:39');
+(558, 'Admin', 'LoggedIn', 1, 'App\\User', 1, 'App\\User', '[]', '2020-10-14 01:22:39', '2020-10-14 01:22:39'),
+(559, 'Admin', 'LoggedOut', 1, 'App\\User', 1, 'App\\User', '[]', '2020-10-14 02:16:04', '2020-10-14 02:16:04'),
+(560, 'Admin', 'LoggedIn', 1, 'App\\User', 1, 'App\\User', '[]', '2020-10-15 01:39:20', '2020-10-15 01:39:20');
 
 -- --------------------------------------------------------
 
@@ -49157,6 +49159,27 @@ INSERT INTO `inquiry` (`id`, `inquiries_fname`, `inquiries_email`, `inquiries_ph
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `jobinquiries`
+--
+
+CREATE TABLE `jobinquiries` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `lookingFor` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Time` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `subject` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `file` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `job_id` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `job_title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `jobs`
 --
 
@@ -49180,11 +49203,11 @@ CREATE TABLE `jobs` (
 
 INSERT INTO `jobs` (`id`, `type`, `created_at`, `updated_at`, `title`, `city`, `company`, `status`, `salary`, `featured`, `sector`) VALUES
 (1, 'Internship', '2020-10-12 05:36:58', '2020-10-14 00:23:00', 'ACCOUNTS OFFICER - PAYABLES', 'calarfornia', 'anvil recruitment', 'expired', 31000, 'Yes', 'Accounting'),
-(4, 'Full time', '2020-10-12 06:03:41', '2020-10-13 04:07:20', 'ACCOUNTS OFFICER - PAYABLES', 'calarfornia', 'anvil recruitment', 'Active', 31000, 'Yes', 'Accounting'),
-(5, 'Full time', '2020-10-12 06:05:02', '2020-10-13 04:07:27', 'ACCOUNTS OFFICER - PAYABLES', 'calarfornia', 'anvil recruitment', 'Active', 31000, 'Yes', 'Accounting'),
-(6, 'Full time', '2020-10-12 06:05:15', '2020-10-13 04:07:35', 'ACCOUNTS OFFICER - PAYABLES', 'calarfornia', 'anvil recruitment', 'Active', 31000, 'Yes', 'Accounting'),
-(7, 'Full time', '2020-10-12 06:05:27', '2020-10-13 04:07:44', 'ACCOUNTS OFFICER - PAYABLES', 'calarfornia', 'anvil recruitment', 'Active', 31000, 'Yes', 'Accounting'),
-(8, 'Full time', '2020-10-12 06:06:14', '2020-10-13 04:07:53', 'ACCOUNTS OFFICER - PAYABLES', 'calarfornia', 'anvil recruitment', 'Active', 31000, 'Yes', 'Accounting');
+(4, 'Full time', '2020-10-12 06:03:41', '2020-10-15 02:59:15', 'ACCOUNTS OFFICER - PAYABLES', 'calarfornia', 'anvil recruitment', 'expired', 31000, 'No', 'Accounting'),
+(5, 'Full time', '2020-10-12 06:05:02', '2020-10-15 02:59:22', 'ACCOUNTS OFFICER - PAYABLES', 'calarfornia', 'anvil recruitment', 'expired', 31000, 'No', 'Accounting'),
+(6, 'Full time', '2020-10-12 06:05:15', '2020-10-15 02:59:40', 'ACCOUNTS OFFICER - PAYABLES', 'calarfornia', 'anvil recruitment', 'expired', 31000, 'No', 'Accounting'),
+(7, 'Full time', '2020-10-12 06:05:27', '2020-10-15 02:59:56', 'ACCOUNTS OFFICER - PAYABLES', 'calarfornia', 'anvil recruitment', 'expired', 31000, 'Yes', 'Accounting'),
+(8, 'Full time', '2020-10-12 06:06:14', '2020-10-15 03:00:04', 'ACCOUNTS OFFICER - PAYABLES', 'calarfornia', 'anvil recruitment', 'expired', 31000, 'No', 'Accounting');
 
 -- --------------------------------------------------------
 
@@ -49246,7 +49269,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (73, '2020_10_08_104711_create_innerbanners_table', 41),
 (74, '2020_10_12_081119_create_types_table', 42),
 (75, '2020_10_12_081505_create_sectors_table', 43),
-(76, '2020_10_12_083239_create_jobs_table', 44);
+(76, '2020_10_12_083239_create_jobs_table', 44),
+(77, '2020_10_15_064256_create_jobinquiries_table', 45);
 
 -- --------------------------------------------------------
 
@@ -49753,7 +49777,11 @@ INSERT INTO `permissions` (`id`, `name`, `label`, `created_at`, `updated_at`) VA
 (262, 'add-job', NULL, '2020-10-12 03:32:39', '2020-10-12 03:32:39'),
 (263, 'edit-job', NULL, '2020-10-12 03:32:40', '2020-10-12 03:32:40'),
 (264, 'view-job', NULL, '2020-10-12 03:32:40', '2020-10-12 03:32:40'),
-(265, 'delete-job', NULL, '2020-10-12 03:32:40', '2020-10-12 03:32:40');
+(265, 'delete-job', NULL, '2020-10-12 03:32:40', '2020-10-12 03:32:40'),
+(266, 'add-jobinquiry', NULL, '2020-10-15 01:42:57', '2020-10-15 01:42:57'),
+(267, 'edit-jobinquiry', NULL, '2020-10-15 01:42:57', '2020-10-15 01:42:57'),
+(268, 'view-jobinquiry', NULL, '2020-10-15 01:42:57', '2020-10-15 01:42:57'),
+(269, 'delete-jobinquiry', NULL, '2020-10-15 01:42:57', '2020-10-15 01:42:57');
 
 -- --------------------------------------------------------
 
@@ -50027,7 +50055,11 @@ INSERT INTO `permission_role` (`permission_id`, `role_id`) VALUES
 (262, 1),
 (263, 1),
 (264, 1),
-(265, 1);
+(265, 1),
+(266, 1),
+(267, 1),
+(268, 1),
+(269, 1);
 
 -- --------------------------------------------------------
 
@@ -50243,19 +50275,6 @@ CREATE TABLE `timesheets` (
   `timesheet` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
---
--- Dumping data for table `timesheets`
---
-
-INSERT INTO `timesheets` (`id`, `created_at`, `updated_at`, `job_id`, `name`, `phone`, `lookingFor`, `email`, `subject`, `file`, `Time`, `timesheet`) VALUES
-(1, '2020-10-14 00:58:21', '2020-10-14 00:58:21', NULL, 'marry john', '01438742', 'sdfaf', 'monica@gmail.com', 'xzcx', 'uploads/cv/20201014fa_1.jpg.jpg', 'dfgfsg', NULL),
-(2, '2020-10-14 00:59:24', '2020-10-14 00:59:24', NULL, 'marry john', '01438742', 'sdfaf', 'monica@gmail.com', 'xzcx', 'uploads/cv/20201014dn.png.png', 'dfgfsg', NULL),
-(3, '2020-10-14 00:59:40', '2020-10-14 00:59:40', NULL, 'marry john', '01438742', 'sdfaf', 'monica@gmail.com', 'xzcx', 'uploads/cv/2020101420200909154654_7-product-detail-4.docx.docx', 'dfgfsg', NULL),
-(4, '2020-10-14 01:02:02', '2020-10-14 01:02:02', NULL, 'marry john', '01438742', 'sdfaf', 'monica@gmail.com', 'xzcx', 'uploads/cv/2020101454.txt.txt', 'dfgfsg', NULL),
-(5, '2020-10-14 01:03:02', '2020-10-14 01:03:02', NULL, 'marry john', '01438742', 'sdfaf', 'monica@gmail.com', 'xzcx', 'uploads/cv/2020101454.txt.txt', 'dfgfsg', NULL),
-(6, '2020-10-14 01:57:08', '2020-10-14 01:57:08', NULL, 'marry john', '01438742', 'sdfaf', 'monica@gmail.com', 'xzcx', 'uploads/cv/2020101420200929014058_0-1601228305-Community List.docx.docx', 'dfgfsg', NULL),
-(7, '2020-10-14 01:57:21', '2020-10-14 01:57:21', NULL, 'marry john', '01438742', 'sdfaf', 'monica@gmail.com', 'xzcx', 'uploads/cv/2020101420200929014058_0-1601228305-Community List.docx.docx', 'dfgfsg', NULL);
-
 -- --------------------------------------------------------
 
 --
@@ -50305,7 +50324,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `localisation`, `provider_id`, `provider`, `status`, `remember_token`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Admin', 'admin@anvil.com', '$2y$08$4pDL8gGKXTRIeJ0vyU/rMurO0c9qBQGG2JaFxUDOKmzBgD7o9A7Au', '', NULL, NULL, 1, '1v3vm3D8okj968E3k5R6JG1gOLxzJdqarGyxQjDfRswfTKvLy15VAiTrAkCE', '2019-11-04 16:29:11', '2019-11-07 15:49:20', NULL),
+(1, 'Admin', 'admin@anvil.com', '$2y$08$4pDL8gGKXTRIeJ0vyU/rMurO0c9qBQGG2JaFxUDOKmzBgD7o9A7Au', '', NULL, NULL, 1, 'bRCyaEgvzvyLjoD6H6iIk6qnOckJ4878T1DtzJ6cqSXkfsb3MDCQxOEZg6hK', '2019-11-04 16:29:11', '2019-11-07 15:49:20', NULL),
 (2, 'Tom Hardy', 'tomhardy.developer@gmail.com', '$2y$08$4pDL8gGKXTRIeJ0vyU/rMurO0c9qBQGG2JaFxUDOKmzBgD7o9A7Au', NULL, NULL, NULL, 1, 'DSDdSeIIgyAkuuAmFqL0BW7LHQDNJ2h6GK1rpZT7xQA691ZaqyFUaM4MSXKV', '2020-05-30 16:59:58', '2020-05-30 16:59:58', NULL),
 (3, 'Leon Kennedy', 'glariance@gmail.com', '$2y$10$bZiq.cg1CCg3opcEBzlvreQkjYufrnYqSAyXkzK87fI0FzEllMyYK', NULL, NULL, NULL, 1, 'Rae9kwFDvbPjlI62MGljKo0ZZm4fwCkPL1ZYywVJfTAKvo5pN4ESuXPtceBj', '2020-05-30 19:05:58', '2020-05-30 19:05:58', NULL),
 (4, 'JIll Velentine', 'Jill@velentien.com', '$2y$10$hGd8E3s0xRGAHqaJMyYeluuaQ0b3sCasruaFvMmU0GgQqQlRqJxzS', NULL, NULL, NULL, 1, 'ytFM4we767EFstneflcDZlGCCOsr3QI1h6F7A0kPf7WjlqzecJaQghmqWLEe', '2020-06-01 14:58:08', '2020-06-01 14:58:08', NULL),
@@ -50389,6 +50408,12 @@ ALTER TABLE `innerbanners`
 -- Indexes for table `inquiry`
 --
 ALTER TABLE `inquiry`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `jobinquiries`
+--
+ALTER TABLE `jobinquiries`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -50535,7 +50560,7 @@ ALTER TABLE `wishlists`
 -- AUTO_INCREMENT for table `activity_log`
 --
 ALTER TABLE `activity_log`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=559;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=561;
 
 --
 -- AUTO_INCREMENT for table `banners`
@@ -50592,6 +50617,12 @@ ALTER TABLE `inquiry`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `jobinquiries`
+--
+ALTER TABLE `jobinquiries`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `jobs`
 --
 ALTER TABLE `jobs`
@@ -50601,7 +50632,7 @@ ALTER TABLE `jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT for table `m_flag`
@@ -50643,7 +50674,7 @@ ALTER TABLE `pages`
 -- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=266;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=270;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -50685,7 +50716,7 @@ ALTER TABLE `testimonials`
 -- AUTO_INCREMENT for table `timesheets`
 --
 ALTER TABLE `timesheets`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `types`

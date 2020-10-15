@@ -10,6 +10,7 @@ use App\post;
 use App\banner;
 use App\imagetable;
 use App\Timesheet;
+use App\Jobinquiry;
 use DB;
 use Mail;use View;
 use Session;
@@ -131,9 +132,63 @@ class HomeController extends Controller
                         
                             /*For Admin Order Email Method */
                         Mail::send('mailingtemplates.userOrderMail', ['data' => $data], function ($m) use ($data) {
-                                $m->from('tomhardy.developer@gmail.com', 'Better Fit Home');
-                                $m->to($data['admin_email'],'Better Fit Home')->subject('New Inquiry');
+                                $m->from('tomhardy.developer@gmail.com', 'AnvilRecruitment');
+                                $m->to($data['admin_email'],'AnvilRecruitment')->subject('New Inquiry');
                         });
+        
+                        // Email code ends here
+            
+  
+          Session::flash('message', 'Thank you for submitting your application. We will get back to you asap'); 
+        Session::flash('alert-class', 'alert-success'); 
+        return back();
+    }
+
+  public function JobInquiry(Request $request)
+      {
+       if ($request->hasFile('file')) {
+           $Jobinquiry = new Jobinquiry;
+            $Jobinquiry->name = $request->name;
+            $Jobinquiry->phone = $request->phone;
+            $Jobinquiry->lookingFor = $request->lookingFor;
+            $Jobinquiry->Time = $request->Time;
+            $Jobinquiry->email = $request->email;
+            $Jobinquiry->subject = $request->subject;
+             $Jobinquiry->job_id  = $request->job_id;
+              $Jobinquiry->job_title  = $request->job_title;
+          
+            
+                  
+
+              $file = $request->file('file');
+                //make sure yo have image folder inside your public
+                $resume_path = 'uploads/Jobinquiry/';
+                $fileName = $file->getClientOriginalName();
+                $profileImage = date("Ymd").$fileName.".".$file->getClientOriginalExtension();
+
+               //$request->file->move(public_path($resume_path) . DIRECTORY_SEPARATOR. $profileImage);
+               $request->file->move(public_path('uploads/Jobinquiry/'), $profileImage);
+
+                $Jobinquiry->file = $resume_path.$profileImage;
+                 
+                  
+             $Jobinquiry->save();
+                 //dd($Jobinquiry);
+         }
+                        // Email code starts here
+                    /*      $data = array();
+                        $data['name'] = $Jobinquiry->name;
+                        $data['phone'] = $Jobinquiry->phone;
+                        $data['lookingFor'] = $Jobinquiry->lookingFor;
+                        $data['Time']  = $Jobinquiry->Time;
+                        $data['file']  = $Jobinquiry->file;
+                        $data['admin_email']=['Colin.G@Anvilrecruitment.uk','Cgriffiths@AnvilRecruitment.uk'];*/
+                        
+                            /*For Admin Order Email Method */
+                    /*    Mail::send('mailingtemplates.userOrderMail', ['data' => $data], function ($m) use ($data) {
+                                $m->from('tomhardy.developer@gmail.com', 'AnvilRecruitment');
+                                $m->to($data['admin_email'],'AnvilRecruitment')->subject('New Inquiry');
+                        });*/
         
                         // Email code ends here
             
@@ -225,7 +280,8 @@ class HomeController extends Controller
 
     }    public function JobDetail($id){
     $innerbanner = DB::table('innerbanners')->where('id',6)->first();
-    $detail = DB::table('pages')->where('id',14)->first();
+    $detail = DB::table('jobs')->where('id',$id)->first();
+   // dd($detail);
     $jobdetail = DB:: table('jobs')->where('id',$job_id)->first();
         return view('job_detail',compact('innerbanner','detail'));
     }

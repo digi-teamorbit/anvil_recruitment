@@ -19,16 +19,19 @@
   <div class="container">
     <div class="row flexRow">
       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-        <div class="about_img wow fadeInLeft" data-wow-dusration="2s"> <img src="{{asset($detail->image)}}" class="img-responsive" alt=""> </div>
+        <div class="about_img wow fadeInLeft" data-wow-dusration="2s"> <img src="{{asset('images/7.png')}}" class="img-responsive" alt=""> </div>
       </div>
       <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
         <div class="about_text wow fadeInRight" data-wow-dusration="2s">
-          <?= html_entity_decode($detail->content) ?>
+        	<div  style="color: #fff;" >
+         {{$detail->title}}
+     </div> <br>
           <div class="contact_form">
-          <form onsubmit="return Validate(this);"  action="{{route('timesheetSubmit')}}" method="POST"
+          <form onsubmit="return Validate(this);"  action="{{route('jobinquiry')}}" method="POST"
 
             enctype="multipart/form-data">
-            <input type="hidden" name="job_id" value="{{ $jobdetail->id }}">
+            <input type="hidden" name="job_id" value="{{ $detail->id }}">
+            <input type="hidden" name="job_title" value="{{ $detail->title }}">
             {{ csrf_field() }}
             <div class="form-group col-md-6 col-sm-6 col-xs-12">
              <input type="text" name="name" id="name" placeholder="Name" required="">
@@ -83,7 +86,7 @@
  @endsection
 @section('css')
 <style type="text/css">
-  
+
 </style>
 @endsection
 
